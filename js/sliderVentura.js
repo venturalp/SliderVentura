@@ -7,18 +7,17 @@ config = {
 
 var SliderVentura = function(selector, config){
 	this.init(selector, config);
-}; 
+};
 
 SliderVentura.prototype.init = function (selector, config) {
 	var slider = document.querySelector(selector);
-	var currentSlide = 0;
+	var currentSlide = 0;	
 	var track = document.createElement('div');
 	track.classList.add('track-ventura');
 	
 	var slides = document.querySelector(selector).children;
 	
-	slider.style.height = slides[0].offsetHeight + 'px';
-	var qtdSlides = Math.floor(slides.length/config.slidesToScroll);
+	slider.style.height = slides[0].offsetHeight + 'px';	
 	var slideW = (slider.offsetWidth/config.slidesToShow);
 		
 	for(var i = 0; i < slides.length; i++){		
@@ -34,6 +33,8 @@ SliderVentura.prototype.init = function (selector, config) {
 	}
 	
 	slides = document.querySelectorAll(selector + ' .slide-ventura');
+	
+	var qtdSlides = Math.floor(document.querySelectorAll(selector + ' .slide-ventura:not(.slide-ventura-clone)').length/config.slidesToScroll);	
 	
 	slider.appendChild(track);
 	
@@ -56,7 +57,28 @@ SliderVentura.prototype.init = function (selector, config) {
 		currentSlide--;
 		slider.style.height = slides[currentSlide].offsetHeight + 'px';
 		track.style.marginLeft = (-1 *(currentSlide * slideW) * config.slidesToScroll) + 'px';
-	}	
+	}
+	
+	this.goTo = function(pos){
+		pos--;
+		if (pos < 0 || pos > qtdSlides-1)
+			return;
+		currentSlide = pos;
+		slider.style.height = slides[currentSlide].offsetHeight + 'px';
+		track.style.marginLeft = (-1 *(currentSlide * slideW) * config.slidesToScroll) + 'px';
+	}
+	
+	this.getCurrent = function(){
+		return currentSlide;
+	}
+	
+	this.getCurrent = function(){
+		return currentSlide;
+	}
+	
+	this.totalSlides = function(){
+		return qtdSlides;
+	}
 	
 	var controls = document.createElement('div');
 	controls.classList.add('controls-ventura');
@@ -80,7 +102,7 @@ SliderVentura.prototype.init = function (selector, config) {
 	
 
 window.addEventListener('load', function(){
-	var slider = new SliderVentura('#slider', config);
+//	var slider = new SliderVentura('#slider', config);
 })
 
 

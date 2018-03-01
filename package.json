@@ -1,0 +1,34 @@
+{
+  "name": "slider_ventura",
+  "version": "0.0.1",
+  "description": "Slider personalizado",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.7.0",
+    "rupture": "^0.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venturalp/SliderVentura.git"
+  },
+  "keywords": [
+    "carousel",
+    "slider",
+    "js",
+    "plugin"
+  ],
+  "author": "Guilherme Ventura de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venturalp/SliderVentura/issues"
+  },
+  "homepage": "https://github.com/venturalp/SliderVentura#readme"
+}
