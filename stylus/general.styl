@@ -7,19 +7,25 @@
 
 body
 	font-family sans-serif
+	padding 0px
+	margin 0px
 
 #slider
-	width 90%
+	width 100%
 	margin 0 auto
 	border 1px solid red
 	
-.slider-ventura
+.slider-ventura	
+	background-color #ccc
 	position relative
 	clear both
 	z-index 1
 	overflow hidden
+	box-sizing border-box
 	& img
 		vertical-align middle
+	& *
+		box-sizing border-box
 		
 .track-ventura
 	height 100%
@@ -28,11 +34,14 @@ body
 	position relative
 		
 .slide-ventura
+	height 700px
 	transition margin-left .5s ease
 	vertical-align middle
 	float left
 	top 0
 	border 1px solid white
+	margin-right 30px
+	overflow hidden
 	&.centerW-ventura
 		centerW()
 	

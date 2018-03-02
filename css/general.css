@@ -2,20 +2,27 @@
 /***************************/
 body {
   font-family: sans-serif;
+  padding: 0px;
+  margin: 0px;
 }
 #slider {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   border: 1px solid #f00;
 }
 .slider-ventura {
+  background-color: #ccc;
   position: relative;
   clear: both;
   z-index: 1;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .slider-ventura img {
   vertical-align: middle;
+}
+.slider-ventura * {
+  box-sizing: border-box;
 }
 .track-ventura {
   height: 100%;
@@ -28,6 +35,7 @@ body {
   position: relative;
 }
 .slide-ventura {
+  height: 700px;
   -webkit-transition: margin-left 0.5s ease;
   -moz-transition: margin-left 0.5s ease;
   -o-transition: margin-left 0.5s ease;
@@ -37,6 +45,8 @@ body {
   float: left;
   top: 0;
   border: 1px solid #fff;
+  margin-right: 30px;
+  overflow: hidden;
 }
 .slide-ventura.centerW-ventura {
   left: 50%;
